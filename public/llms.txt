@@ -1,0 +1,10 @@
+# SENS
+
+> SENS engineers human connection at events through AI matchmaking and real-world rewards.
+
+SENS turns social anxiety into meaningful, in-person engagement. The platform matches the right people in the room and rewards real conversations — strictly face-to-face, no in-app chat.
+
+## Pages
+
+- [Home](/): What SENS is, how the matchmaking and reward loop works, and who it's for.
+- [Story](/story): A 2-minute cinematic story showing the shift from a silent room to real connection.
