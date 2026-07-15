@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { SensLogo } from "@/components/ui/SensLogo";
 
 const FooterSectionV2 = () => {
   return (
@@ -19,7 +20,9 @@ const FooterSectionV2 = () => {
 
       <div className="border-t border-border py-8">
         <div className="container flex flex-col sm:flex-row items-center justify-between gap-4 px-4">
-          <span className="font-logo text-lg font-extrabold tracking-[0.15em] uppercase text-gradient-primary">SENS</span>
+          <div className="scale-[0.4] origin-left">
+            <SensLogo />
+          </div>
           <p className="text-sm text-muted-foreground">
             The connection layer for in-person events.
           </p>

@@ -3,6 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
+import { SensLogo } from "@/components/ui/SensLogo";
 
 const links = [
   { to: "/story", label: "What it is" },
@@ -22,13 +23,10 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-card/80 backdrop-blur-xl">
+    <nav className="fixed top-4 left-4 right-4 z-50 rounded-2xl border border-border bg-card/80 backdrop-blur-xl">
       <div className="container flex h-16 items-center justify-between">
-        <Link
-          to="/"
-          className="font-logo text-xl font-extrabold tracking-[0.15em] uppercase text-gradient-primary"
-        >
-          SENS
+        <Link to="/" className="scale-[0.4] origin-left">
+          <SensLogo />
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
@@ -57,9 +55,9 @@ const Navbar = () => {
           </SheetTrigger>
           <SheetContent side="right" className="w-72">
             <div className="flex flex-col gap-6 pt-8">
-              <span className="font-logo text-xl font-extrabold tracking-[0.15em] uppercase text-gradient-primary">
-                SENS
-              </span>
+              <div className="scale-[0.4] origin-left">
+                <SensLogo />
+              </div>
               <div className="flex flex-col gap-4">
                 {links.map((l) => (
                   <SheetClose asChild key={l.to}>

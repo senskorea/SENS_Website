@@ -110,3 +110,50 @@
 .animate-typing {
   animation: typing 2s steps(36, end) forwards;
 }
+
+/* SENS Official Logo */
+.sens-logo-container {
+  --font-logo: 'Syne', sans-serif;
+  
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.sens-logo-container.horizontal {
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.sens-logo-container .logo-mark {
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.sens-logo-container .logo-bar {
+  width: 12px;
+  border-radius: 6px;
+  background: var(--gradient-primary-vertical);
+}
+
+.sens-logo-container .logo-bar:nth-child(1) { height: 32px; }
+.sens-logo-container .logo-bar:nth-child(2) { height: 56px; }
+.sens-logo-container .logo-bar:nth-child(3) { height: 72px; }
+.sens-logo-container .logo-bar:nth-child(4) { height: 56px; }
+.sens-logo-container .logo-bar:nth-child(5) { height: 32px; }
+
+.sens-logo-container .logo-wordmark {
+  font-family: var(--font-logo);
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: 0.15em;
+  line-height: 1;
+}
