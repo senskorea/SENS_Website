@@ -30,9 +30,9 @@ const HeroSectionV2 = () => {
             variant="hero"
             size="lg"
             className="text-base px-8 py-6"
-            onClick={() => navigate("/story")}
+            onClick={() => window.open("https://luma.com/b0vqlnzn", "_blank")}
           >
-            Step inside the story
+            Experience it Live: Solo Vibing
           </Button>
           <Button
             variant="heroOutline"
