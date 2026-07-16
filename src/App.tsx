@@ -31,7 +31,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/SENS_Website/">
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<IndexV2 />} />
           <Route path="/story" element={<StoryV2 />} />
