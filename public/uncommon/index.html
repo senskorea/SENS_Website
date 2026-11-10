@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>SENS for Uncommon Gallery</title>
+  <link rel="stylesheet" href="./viewer.css">
+</head>
+<body>
+  <main class="viewer" id="viewer">
+    <header class="top">
+      <h1><span>SENS</span> <span class="partner">for Uncommon Gallery</span></h1>
+      <a href="./sens-uncommon-gallery.pdf" download>Download PDF</a>
+    </header>
+    <figure id="stage">
+      <img id="slide" src="./Slides/01-cover.png" alt="SENS: Meet the right people. AI powered networking for real world events." width="1672" height="941">
+      <figcaption id="caption" class="sr-only">SENS: Meet the right people</figcaption>
+    </figure>
+    <nav id="controls" aria-label="Presentation controls" hidden>
+      <button id="previous" type="button" aria-label="Previous slide">←</button>
+      <span id="counter" aria-live="polite" aria-atomic="true">1 / 10</span>
+      <button id="next" type="button" aria-label="Next slide">→</button>
+      <button id="fullscreen" type="button" hidden>Fullscreen</button>
+      <a id="demo" href="https://sensai.cc/try/" target="_blank" rel="noopener noreferrer" hidden>Try the demo ↗</a>
+    </nav>
+    <p id="status" role="status" class="sr-only"></p>
+    <noscript><p>Download the PDF to view all slides without JavaScript.</p></noscript>
+  </main>
+  <script type="module" src="./viewer.js"></script>
+</body>
+</html>
