@@ -1,0 +1,62 @@
+[
+  {
+    "image": "Slides/01-cover.png",
+    "master": "cover-v007",
+    "title": "SENS: Meet the right people",
+    "description": "AI powered networking for real world events."
+  },
+  {
+    "image": "Slides/02-problem-restored-v2.png",
+    "master": "problem-v004",
+    "title": "The networking problem",
+    "description": "Events bring people together, but who they meet is often left to chance."
+  },
+  {
+    "image": "Slides/03-what-sens-does.png",
+    "master": "solution-v046",
+    "title": "What SENS does",
+    "description": "Attendees discover, meet and save relevant contacts. Organisers measure and improve engagement."
+  },
+  {
+    "image": "Slides/04-attendee-experience.png",
+    "master": "attendee-experience-v004",
+    "title": "The attendee experience",
+    "description": "Join by QR, explore matches, confirm a connection and earn rewards."
+  },
+  {
+    "image": "Slides/05-organiser-experience.png",
+    "master": "organiser-experience-v016",
+    "title": "The organiser experience",
+    "description": "Describe the event, customise the experience and measure what happened."
+  },
+  {
+    "image": "Slides/06-blockchain-opportunity-v1.png",
+    "master": "blockchain-opportunity-uncommon-gallery-existing-ecosystem-journey-2026-11-07-v001",
+    "title": "Rewards powered by your ecosystem",
+    "description": "A proposed blockchain integration for rewards and redemption."
+  },
+  {
+    "image": "Slides/07-pilot-evidence-restored-v2.png",
+    "master": "traction-v005",
+    "title": "Pilot evidence",
+    "description": "Event pilots and post event feedback."
+  },
+  {
+    "image": "Slides/08-pricing.png",
+    "master": "business-model-v007",
+    "title": "Connection based pricing",
+    "description": "Pricing is based on mutually confirmed connections."
+  },
+  {
+    "image": "Slides/09-team-and-delivery-playful-3d-v4.png",
+    "master": "team-v049",
+    "title": "Team and delivery",
+    "description": "Founder, part time collaborators and advisers."
+  },
+  {
+    "image": "Slides/10-demo-and-contact-short-url-v2.png",
+    "master": "closing-v006",
+    "title": "See SENS in action",
+    "description": "Try the interactive demo or contact SENS about an upcoming event."
+  }
+]
