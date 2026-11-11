@@ -6,15 +6,22 @@
   <meta name="robots" content="noindex, nofollow, noarchive">
   <title>SENS for Uncommon Gallery</title>
   <link rel="stylesheet" href="./viewer.css">
+  <link rel="stylesheet" href="./korean.css">
 </head>
 <body>
   <main class="viewer" id="viewer">
     <header class="top">
       <h1><span>SENS</span> <span class="partner">for Uncommon Gallery</span></h1>
-      <a href="./sens-uncommon-gallery.pdf" download>Download PDF</a>
+      <div class="top-actions">
+        <label id="language-control" hidden><span id="language-label" class="sr-only">Deck language</span>
+          <select id="language" aria-labelledby="language-label"><option value="en">English</option><option value="ko">한국어</option></select>
+        </label>
+        <a id="download" href="./sens-uncommon-gallery.pdf" download>Download PDF</a>
+      </div>
     </header>
     <figure id="stage">
       <img id="slide" src="./Slides/01-cover.png" alt="SENS: Meet the right people. AI powered networking for real world events." width="1672" height="941">
+      <article id="korean-slide" class="ko-slide" lang="ko" hidden></article>
       <figcaption id="caption" class="sr-only">SENS: Meet the right people</figcaption>
     </figure>
     <nav id="controls" aria-label="Presentation controls" hidden>

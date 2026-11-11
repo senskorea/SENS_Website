@@ -7,12 +7,30 @@ const next = byId("next");
 const fullscreen = byId("fullscreen");
 const demo = byId("demo");
 const status = byId("status");
+const koreanSlide = byId("korean-slide");
+const language = byId("language");
+const prefKey = "sens-uncommon-language";
+const languageFromUrl = () => new URL(location.href).searchParams.get("lang");
+function rememberedLanguage() {
+  try { return localStorage.getItem(prefKey); } catch { return null; }
+}
 
 async function start() {
   const response = await fetch("./slides.json");
   if (!response.ok) throw new Error("Slide list unavailable");
   const slides = await response.json();
   if (!slides.length) throw new Error("Slide list empty");
+  let korean = null;
+  try {
+    const result = await fetch("./korean-slides.json");
+    if (result.ok) {
+      const translated = await result.json();
+      if (Array.isArray(translated) && translated.length === slides.length &&
+          translated.every((item, i) => item.position === i + 1 && item.html && item.label)) korean = translated;
+    }
+  } catch { /* The original deck remains usable. */ }
+  let lang = korean && (languageFromUrl() ?? rememberedLanguage()) === "ko" ? "ko" : "en";
+  byId("language-control").hidden = !korean;
   const fromHash = () => {
     const match = /^#slide-([1-9][0-9]*)$/.exec(location.hash);
     return match ? Math.min(slides.length - 1, Number(match[1]) - 1) : 0;
@@ -22,15 +40,53 @@ async function start() {
 
   function render() {
     const item = slides[index];
-    slide.src = item.image;
-    slide.alt = item.description;
-    byId("caption").textContent = item.title;
+    const ko = lang === "ko";
+    viewer.dataset.lang = lang;
+    document.documentElement.lang = lang;
+    language.value = lang;
+    slide.hidden = ko;
+    koreanSlide.hidden = !ko;
+    byId("download").textContent = ko ? "영문 PDF 다운로드" : "Download PDF";
+    byId("language-label").textContent = ko ? "덱 언어" : "Deck language";
+    byId("controls").setAttribute("aria-label", ko ? "슬라이드 탐색" : "Presentation controls");
+    previous.setAttribute("aria-label", ko ? "이전 슬라이드" : "Previous slide");
+    next.setAttribute("aria-label", ko ? "다음 슬라이드" : "Next slide");
+    demo.textContent = ko ? "데모 체험 ↗" : "Try the demo ↗";
+    updateFullscreenLabel();
+    if (ko) {
+      const translation = korean[index];
+      const heading = document.createElement("h2");
+      heading.textContent = translation.label;
+      heading.hidden = index === 0;
+      const body = document.createElement("template");
+      body.innerHTML = translation.html; // First-party, versioned Korean slide markup.
+      koreanSlide.dataset.slide = String(index + 1);
+      koreanSlide.replaceChildren(heading, body.content);
+      byId("caption").textContent = translation.label;
+    } else {
+      slide.src = item.image;
+      slide.alt = item.description;
+      byId("caption").textContent = item.title;
+    }
     byId("counter").textContent = `${index + 1} / ${slides.length}`;
     previous.disabled = index === 0;
     next.disabled = index === slides.length - 1;
     demo.hidden = index !== slides.length - 1;
-    if (index + 1 < slides.length) new Image().src = slides[index + 1].image;
+    if (!ko && index + 1 < slides.length) new Image().src = slides[index + 1].image;
   }
+  function updateFullscreenLabel() {
+    const active = Boolean(document.fullscreenElement);
+    fullscreen.textContent = lang === "ko" ? (active ? "전체 화면 닫기" : "전체 화면")
+      : (active ? "Exit fullscreen" : "Fullscreen");
+  }
+  language.addEventListener("change", () => {
+    lang = language.value === "ko" && korean ? "ko" : "en";
+    const url = new URL(location.href);
+    url.searchParams.set("lang", lang);
+    history.replaceState(null, "", url);
+    try { localStorage.setItem(prefKey, lang); } catch { /* Private browsing. */ }
+    render();
+  });
   function go(value) {
     const bounded = Math.max(0, Math.min(slides.length - 1, value));
     if (bounded === index) return;
@@ -85,9 +141,7 @@ async function start() {
         status.textContent = "Fullscreen is unavailable in this browser.";
       }
     });
-    document.addEventListener("fullscreenchange", () => {
-      fullscreen.textContent = document.fullscreenElement ? "Exit fullscreen" : "Fullscreen";
-    });
+    document.addEventListener("fullscreenchange", updateFullscreenLabel);
   }
   byId("controls").hidden = false;
   render();
