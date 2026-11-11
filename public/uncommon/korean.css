@@ -1,0 +1,43 @@
+.top-actions{display:flex;align-items:center;gap:8px}
+.top-actions select{min-height:44px;padding:8px;border:1px solid #dcd8e2;border-radius:8px;background:white;color:#17161a;font:inherit}
+.viewer[data-lang="ko"] #stage{height:auto;overflow:visible;container-type:inline-size;aspect-ratio:auto}
+.ko-slide{--accent:#a61742;min-height:56.25cqw;padding:4cqw 5cqw;font:500 clamp(13px,1.52cqw,24px)/1.55 system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;word-break:keep-all;overflow-wrap:anywhere;background:linear-gradient(155deg,#fff 60%,#fff6f9);border-radius:inherit}
+.ko-slide h2{color:var(--accent);font-size:.88em;letter-spacing:.06em;margin:0 0 .6em}
+.ko-slide p{margin:.65em 0}
+.ko-slide>p:first-of-type strong{display:inline-block;font-size:clamp(21px,3.5cqw,54px);line-height:1.18;letter-spacing:-.05em;color:#17161a}
+.ko-slide>p:first-of-type strong:nth-of-type(2){color:var(--accent)}
+.ko-slide strong{color:var(--accent)}
+.ko-slide ol,.ko-slide ul{padding-left:1.5em;margin:.75em 0}
+.ko-slide li{margin:.35em 0}
+.ko-slide .table{overflow:auto;margin:.85em 0;border:1px solid #e9dce3;border-radius:9px}
+.ko-slide table{border-collapse:collapse;width:100%;font-size:.94em}
+.ko-slide th,.ko-slide td{text-align:left;padding:.4em .75em;vertical-align:middle}
+.ko-slide th{background:#fbeaf1}
+.ko-slide td{border-top:1px solid #efe5eb}
+.ko-slide blockquote{margin:.7em 0;padding:.5em .8em;border-left:3px solid #ee6f95;background:#fff0f5;font-size:.85em}
+.ko-slide a{min-height:unset;display:inline;padding:0;color:var(--accent)}
+.ko-slide .art-crop{position:relative;overflow:hidden;width:100%;border-radius:7px;background:#f8f5f7}
+.ko-slide .art-crop img{position:absolute;max-width:none;object-fit:fill}
+.ko-slide .journey-art{margin:.6em 0;max-width:75%;border-radius:9px}
+.ko-slide[data-slide="1"]{padding:0;min-height:0}
+.ko-cover-art{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:inherit}
+.ko-cover-art>img{width:100%;height:100%;object-fit:cover}
+.ko-cover-copy{position:absolute;top:40.2%;left:3.2%;width:44%;line-height:1.35}
+.ko-cover-copy p{margin:1.7cqw 0 0;font-size:1.9cqw}
+.ko-cover-copy p:first-child{margin:0;font-size:3.65cqw;line-height:1.19;letter-spacing:-.055em}
+.ko-cover-copy p:first-child strong:first-of-type{color:#101010}
+.ko-cover-copy p:last-child{font-size:1.78cqw;color:#535362}
+.ko-slide[data-slide="4"] ol,.ko-slide[data-slide="5"] ol{padding:0;display:grid;gap:1.25em;grid-template-columns:repeat(4,minmax(0,1fr));list-style:none;counter-reset:steps}
+.ko-slide[data-slide="5"] ol{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ko-slide[data-slide="4"] li,.ko-slide[data-slide="5"] li{counter-increment:steps}
+.ko-slide[data-slide="4"] li>div:last-child,.ko-slide[data-slide="5"] li>div:last-child{margin-top:.4em;font-size:.9em}
+.ko-slide[data-slide="4"] li>div:last-child:before,.ko-slide[data-slide="5"] li>div:last-child:before{content:counter(steps) ". ";color:var(--accent);font-weight:800}
+.ko-slide[data-slide="4"] .art-crop{width:60%;margin-inline:auto}
+.ko-slide[data-slide="5"] .art-crop{width:88%;margin-inline:auto}
+.ko-slide[data-slide="7"] .pilot-photo{float:right;width:34%;margin:.4em 0 .5em 1.25em}
+.ko-slide[data-slide="9"] td:first-child{white-space:normal}
+.ko-slide[data-slide="9"] .portrait{display:inline-block;width:2.3em;vertical-align:middle;margin-right:.6em;border-radius:50%}
+.ko-slide[data-slide="9"] .founder .portrait{float:left;width:4.8em;margin-right:1em}
+.ko-slide[data-slide="9"] .founder{display:flow-root;padding:.6em .8em;background:#fff1f5;border-radius:8px}
+@media(max-width:600px){.ko-slide[data-slide="4"] ol,.ko-slide[data-slide="5"] ol{grid-template-columns:repeat(2,minmax(0,1fr))}.ko-slide[data-slide="7"] .pilot-photo{float:none;width:100%;margin:0}.ko-slide[data-slide="9"] .portrait{display:block;margin:.15em 0}.ko-slide[data-slide="9"] .founder .portrait{display:inline-block}}
+@media(max-width:600px){.ko-cover-art{aspect-ratio:auto}.ko-cover-art>img{height:auto}.ko-cover-copy{position:static;width:auto;padding:14px 18px 20px}.ko-cover-copy p:first-child{font-size:23px}.ko-cover-copy p,.ko-cover-copy p:last-child{font-size:14px}.ko-slide .journey-art{max-width:100%}}
